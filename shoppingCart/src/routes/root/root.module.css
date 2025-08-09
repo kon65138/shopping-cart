@@ -1,3 +1,43 @@
+body {
+  margin: 0;
+}
+
 .navBar {
+  padding: 0 1vw 0 1vw;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aquamarine;
+}
+
+.btn {
+  background: none;
+  border: none;
+  transition: transform 150ms ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(1);
+}
+
+.navBtns {
+  margin-right: 5vw;
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+}
+
+.navBtn {
+  composes: btn;
+  border-radius: 0.5vw;
+}
+
+.iconBtn {
+  composes: btn;
+  border-radius: 0.5vw;
 }

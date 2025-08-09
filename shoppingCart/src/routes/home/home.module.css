@@ -1,3 +1,28 @@
 .home {
-  background-color: red;
+  /* need to fix background, doesnt look good when landscape*/
+  height: 90vh;
+  background-image: url(./pawel-czerwinski-IWB5zcF6uLc-unsplash.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+}
+
+.homeText {
+  font-size: 10vw;
+}
+
+.shopNowBtn {
+  padding: 1vw;
+  height: fit-content;
+  width: fit-content;
+  font-size: 3vw;
+  text-decoration: none;
+  color: black;
+  border-radius: 1vw;
+  transition: background 150ms ease-in-out;
+}
+
+.shopNowBtn:hover {
+  background-color: rgba(0, 0, 0, 0.151);
 }

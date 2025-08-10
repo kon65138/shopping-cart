@@ -1,7 +1,31 @@
 .store {
   height: 90vh;
-  background-image: url(../../milad-fakurian-3eRWmMpofxE-unsplash.jpg);
-  background-size: cover;
-  display: flex;
+  display: grid;
+  grid-template: repeat(7, 1fr) / repeat(3, 1fr);
+  background-color: white;
+  gap: 1vw;
+  padding: 1vw;
+  justify-content: center;
+  align-items: center;
   padding: 2vw;
+}
+
+.card {
+  width: 29;
+  height: 70vh;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.itemImg {
+  max-width: 28vw;
+  aspect-ratio: inherit;
+  max-height: 50vh;
+}
+
+.loading {
+  text-align: center;
+  font-size: 5vw;
 }

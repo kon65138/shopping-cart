@@ -1,9 +1,16 @@
 import { Outlet, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import styles from './root.module.css';
 // import icons as react components
 import { ShoppingCart } from 'lucide-react';
 
 export default function Root() {
+  const [items, setItems] = useState();
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+      .then((response) => response.json())
+      .then((data) => setItems(data));
+  }, []);
   return (
     <>
       <div className={styles.navBar}>
@@ -20,7 +27,7 @@ export default function Root() {
           <ShoppingCart />
         </Link>
       </div>
-      <Outlet />
+      <Outlet context={[items, setItems]} />
     </>
   );
 }

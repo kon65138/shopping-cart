@@ -1,3 +1,7 @@
 .store {
-  background-color: blue;
+  height: 90vh;
+  background-image: url(../../milad-fakurian-3eRWmMpofxE-unsplash.jpg);
+  background-size: cover;
+  display: flex;
+  padding: 2vw;
 }

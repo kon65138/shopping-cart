@@ -16,13 +16,56 @@
   padding: 1vw;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 45vh;
 }
 
 .itemImg {
   max-width: 28vw;
-  aspect-ratio: inherit;
-  max-height: 50vh;
+  aspect-ratio: initial;
+  max-height: 45vh;
+}
+
+.itemInfo {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 1;
+}
+
+.itemPrice {
+  font-size: 2vw;
+}
+
+.quantityPlusCart {
+  display: flex;
+  align-items: center;
+}
+
+.quantityPlusCart label {
+  font-size: 1.5vw;
+}
+
+#quantity {
+  width: 4vw;
+  font-size: 1.3vw;
+  height: 1.5vw;
+}
+
+.addToCartBtn {
+  composes: btn from '../root/root.module.css';
+  background-color: aquamarine;
+  border-radius: 4vw;
+  height: 3vw;
+  flex: 1;
+  font-size: 1.2vw;
+  margin: 0 2vw 0 2vw;
 }
 
 .loading {

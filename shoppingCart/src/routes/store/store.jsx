@@ -28,14 +28,18 @@ export default function Store() {
 function ItemCard({ title, img, price }) {
   return (
     <div className={styles.card}>
-      <img className={styles.itemImg} src={img} alt="" />
-      <h2 className={styles.itemName}>{title}</h2>
-      <div className={styles.itemPrice}>{price}</div>
-      <div className={styles.quantity}>
-        <label htmlFor="quantity">Quantity:</label>
-        <input type="number" id={styles.quantity} maxLength={2} />
+      <div className={styles.imgContainer}>
+        <img className={styles.itemImg} src={img} alt="" />
       </div>
-      <button className={styles.addToCartBtn}>Add to Cart</button>
+      <div className={styles.itemInfo}>
+        <h2 className={styles.itemName}>{title}</h2>
+        <div className={styles.itemPrice}>{'£' + price}</div>
+        <div className={styles.quantityPlusCart}>
+          <label htmlFor="quantity">Quantity:</label>
+          <input type="number" id={styles.quantity} maxLength={2} />
+          <button className={styles.addToCartBtn}>Add to Cart</button>
+        </div>
+      </div>
     </div>
   );
 }

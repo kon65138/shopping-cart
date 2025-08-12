@@ -6,6 +6,7 @@ import { ShoppingCart } from 'lucide-react';
 
 export default function Root() {
   const [items, setItems] = useState();
+  const [cart, setCart] = useState([]);
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
@@ -24,10 +25,11 @@ export default function Root() {
           </Link>
         </div>
         <Link to="trolley" className={styles.iconBtn}>
+          <div className={styles.cartNumber}>{cart.length}</div>
           <ShoppingCart />
         </Link>
       </div>
-      <Outlet context={[items, setItems]} />
+      <Outlet context={{ itm: [items, setItems], crt: [cart, setCart] }} />
     </>
   );
 }

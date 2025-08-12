@@ -37,6 +37,7 @@
 }
 
 .iconBtn {
+  display: flex;
   composes: btn;
   border-radius: 0.5vw;
 }

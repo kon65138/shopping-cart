@@ -1,9 +1,11 @@
 import styles from './store.module.css';
-import { useOutletContext } from 'react-router-dom';
+import { useOutlet, useOutletContext } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Store() {
-  const [items, setItems] = useOutletContext();
+  const { itm, crt } = useOutletContext();
+  const [items, setItems] = itm;
+  const [cart, setCart] = crt;
   return (
     <>
       <div className={styles.store}>
@@ -14,7 +16,10 @@ export default function Store() {
                 title={item.title}
                 img={item.image}
                 price={item.price}
-                key={items.id}
+                id={item.id}
+                cart={cart}
+                setCart={setCart}
+                key={item.id}
               />
             );
           })
@@ -26,14 +31,38 @@ export default function Store() {
   );
 }
 
-function ItemCard({ title, img, price }) {
+function ItemCard({ title, img, price, id, cart, setCart }) {
   const [quant, setQuant] = useState(1);
 
   function updateQuantity(e) {
-    if (e.target.value > 99 || e.target.value < 1) {
+    const num = parseInt(e.target.value);
+    if (num > 99 || num < 0) {
       return;
     }
-    setQuant(e.target.value);
+    setQuant(num);
+  }
+  function handleBtn(e) {
+    for (const item of cart) {
+      if (item.id === id) {
+        if (item.quantity + quant < 100 && item.quantity + quant > 0) {
+          setCart(
+            cart.map((itm) => {
+              if (itm.id === id) {
+                return { ...itm, quantity: itm.quantity + quant };
+              } else {
+                return itm;
+              }
+            }),
+          );
+        } else {
+          return;
+        }
+        return;
+      }
+    }
+    if (quant > 0 && quant < 100) {
+      setCart([...cart, { id: id, quantity: quant }]);
+    }
   }
   return (
     <div className={styles.card}>
@@ -52,7 +81,9 @@ function ItemCard({ title, img, price }) {
             onChange={updateQuantity}
             value={quant}
           />
-          <button className={styles.addToCartBtn}>Add to Cart</button>
+          <button className={styles.addToCartBtn} onClick={handleBtn}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

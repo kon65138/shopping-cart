@@ -41,7 +41,7 @@ function ItemCard({ title, img, price, id, cart, setCart }) {
     }
     setQuant(num);
   }
-  function handleBtn(e) {
+  function handleBtn() {
     for (const item of cart) {
       if (item.id === id) {
         if (item.quantity + quant < 100 && item.quantity + quant > 0) {

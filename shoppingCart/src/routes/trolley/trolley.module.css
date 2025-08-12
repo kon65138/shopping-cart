@@ -1,3 +1,46 @@
 .trolley {
-  background-color: green;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 3vw;
+}
+
+.cartContents {
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 2vw;
+  width: 51vw;
+  align-items: center;
+}
+
+.item {
+  border: 2px solid blue;
+  padding: 0 1vw 0 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  width: 50vw;
+  max-height: 6vw;
+}
+
+.itemImg {
+  max-width: 3vw;
+  max-height: 3vw;
+}
+
+.itemTitle {
+  flex: 1;
+}
+
+.quantityPlusPrice {
+  display: flex;
+  gap: 2vw;
 }

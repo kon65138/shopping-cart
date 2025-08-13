@@ -1,4 +1,5 @@
 .trolley {
+  gap: 2vw;
   padding: 2vw;
   display: flex;
   flex-direction: column;
@@ -11,28 +12,30 @@
 }
 
 .cartContents {
+  gap: 2vw;
   padding: 1vw;
   display: flex;
   flex-direction: column;
   border: 2px solid black;
   border-radius: 2vw;
-  width: 51vw;
+  width: 71vw;
   align-items: center;
 }
 
+.empty {
+  font-size: 1.2vw;
+}
+
 .item {
-  border: 2px solid blue;
   padding: 0 1vw 0 1vw;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1vw;
-  width: 50vw;
-  max-height: 6vw;
+  width: 70vw;
 }
 
 .itemImg {
-  max-width: 3vw;
   max-height: 3vw;
 }
 
@@ -40,7 +43,79 @@
   flex: 1;
 }
 
+.editBtn {
+  composes: btn from '../root/root.module.css';
+  background-color: aquamarine;
+  border-radius: 1vw;
+  height: 2vw;
+  width: 5vw;
+}
+
 .quantityPlusPrice {
   display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.price {
+  text-align: center;
+  width: 5vw;
+}
+
+.editBox {
+  gap: 1vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2vw;
+  z-index: 3;
+  position: absolute;
+  background: white;
+  padding: 2vw;
+  border: 4px solid aquamarine;
+}
+
+.editBoxButtons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.deleteItem {
+  composes: btn from '../root/root.module.css';
+  background-color: red;
+  border-radius: 2vw;
+  height: 2vw;
+  padding: 0 2vw 0 2vw;
+}
+
+.submitEdit {
+  composes: btn from '../root/root.module.css';
+  background-color: green;
+  border-radius: 2vw;
+  height: 2vw;
+  padding: 0 2vw 0 2vw;
+}
+
+.checkout {
+  width: 71vw;
+  display: flex;
+  flex-direction: column;
   gap: 2vw;
+}
+
+.subTotalCont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subTotalCont div {
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.checkoutBtn {
+  composes: btn from '../root/root.module.css';
+  background-color: aquamarine;
+  height: 4vw;
+  border-radius: 2vw;
+  font-size: 2vw;
 }

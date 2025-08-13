@@ -1,5 +1,5 @@
 import styles from './store.module.css';
-import { useOutlet, useOutletContext } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Store() {

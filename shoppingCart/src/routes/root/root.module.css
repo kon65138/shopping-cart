@@ -8,7 +8,6 @@
 }
 
 .btn {
-  background: none;
   border: none;
   transition: transform 150ms ease-in-out;
   text-decoration: none;

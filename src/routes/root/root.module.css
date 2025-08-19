@@ -1,4 +1,21 @@
+div,
+button {
+  min-width: fit-content;
+}
+
+* {
+  font-size: 1vw;
+  box-sizing: border-box;
+}
+
+#title {
+  font-size: 2vw;
+}
+
 .navBar {
+  position: sticky;
+  top: 0px;
+  width: 100%;
   height: 10vh;
   padding: 0 1vw 0 1vw;
   display: flex;

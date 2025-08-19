@@ -15,7 +15,7 @@ export default function Root() {
   return (
     <>
       <div className={styles.navBar}>
-        <h1>Miles' Store</h1>
+        <h1 id={styles.title}>Miles' Store</h1>
         <div className={styles.navBtns}>
           <Link to="/" className={styles.navBtn}>
             Home <hr color="black" />

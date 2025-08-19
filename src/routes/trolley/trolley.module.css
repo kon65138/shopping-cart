@@ -76,6 +76,7 @@
 
 .editBoxButtons {
   display: flex;
+  gap: 1vw;
   justify-content: space-around;
 }
 

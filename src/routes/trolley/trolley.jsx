@@ -1,6 +1,6 @@
 import styles from './trolley.module.css';
 import { useOutletContext } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 export default function Trolley() {
   const { itm, crt } = useOutletContext();
@@ -9,6 +9,15 @@ export default function Trolley() {
   function handleCheckout() {
     setCart([]);
   }
+
+  const totalPrice = Number.parseFloat(
+    useMemo(() => {
+      return cart.reduce((runningTotal, item) => {
+        return runningTotal + items[item.id - 1].price * item.quantity;
+      }, 0);
+    }, [cart, items]),
+  ).toFixed(2);
+
   return (
     <div className={styles.trolley}>
       <h2 className={styles.title}>shopping cart</h2>
@@ -35,14 +44,7 @@ export default function Trolley() {
       <div className={styles.checkout}>
         <div className={styles.subTotalCont}>
           <div>Subtotal:</div>
-          <div className={styles.subTotal}>
-            £
-            {Number.parseFloat(
-              cart.reduce((runningTotal, item) => {
-                return runningTotal + items[item.id - 1].price * item.quantity;
-              }, 0),
-            ).toFixed(2)}
-          </div>
+          <div className={styles.subTotal}>£{totalPrice}</div>
         </div>
         <button className={styles.checkoutBtn} onClick={handleCheckout}>
           Checkout
